@@ -153,7 +153,7 @@
     [[self application] acquireTokenSilentWithParameters:silentParams completionBlock:^(MSALResult *result, NSError *error) {
         if (!error)
         {
-            CDVPluginResult * pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:result.accessToken];
+            CDVPluginResult * pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:result.idToken];
             [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
         }
         else
@@ -177,7 +177,7 @@
     [[self application] acquireTokenWithParameters:interactiveParams completionBlock:^(MSALResult *result, NSError *error) {
         if (!error)
         {
-            CDVPluginResult * pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:result.accessToken];
+            CDVPluginResult * pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:result.idToken];
             [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
         }
         else
