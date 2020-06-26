@@ -154,7 +154,7 @@
         if (!error)
         {
             NSString *textoutput = [NSString stringWithFormat:@"{\"idToken\":\"%@\",\"accessToken\":\"%@\"}", result.idToken, result.accessToken];
-            CDVPluginResult * pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:result.idToken];
+            CDVPluginResult * pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:textoutput];
             
             
             [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
